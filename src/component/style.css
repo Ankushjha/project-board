@@ -1,0 +1,35 @@
+.bg-navbar {
+    background-color: #2E2E30;
+}
+
+.create-button {
+    background-color: #3D3E40;
+}
+
+.font-icon-size {
+    font-size: 20px;
+}
+
+.navbar-search {
+    background-color: #565557;
+    padding: 5px;
+    width: 480px;
+}
+
+.navbar-search::placeholder {
+    color: white;
+    padding-left: 30px;
+}
+
+.icon-position {
+    top: 5px;
+    left: 10px;
+}
+
+.add-billing-info {
+    background-color: #F1BD6C;
+}
+
+.user-option {
+    background-color: #FC979A;
+}
