@@ -1,13 +1,28 @@
-.bg-navbar {
+/* global css */
+body {
+    overflow: hidden;
+}
+
+.text-color {
+    color: #f4f5f3;
+}
+
+.font-icon-size {
+    font-size: 20px;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #565557 !important;
+}
+
+/* navbar css  */
+/* navbar component css  */
+.bg-navbar, .bg-sidebar {
     background-color: #2E2E30;
 }
 
 .create-button {
     background-color: #3D3E40;
-}
-
-.font-icon-size {
-    font-size: 20px;
 }
 
 .navbar-search {
@@ -17,7 +32,7 @@
 }
 
 .navbar-search::placeholder {
-    color: white;
+    color: #f4f5f3;
     padding-left: 30px;
 }
 
@@ -32,4 +47,73 @@
 
 .user-option {
     background-color: #FC979A;
+}
+
+.user-option:hover {
+    background-color: #E2888A;
+}
+
+/* sidebar menu css  */
+/* menu item component css  */
+.menu-item:hover {
+    background-color: #3A3A3C;
+}
+
+.sidebar-menu-item {
+    width: -webkit-fill-available;
+}
+
+.plus-icon:hover {
+    background-color: #3A3A3C;
+    color: white;
+}
+
+/* footer sidebar menu */
+.invite {
+    background: #2A2B2D;
+    border-color: #565557;
+}
+
+.invite:hover, .help:hover {
+    background-color: #3A3A3C;
+}
+
+.help:hover {
+    color: #f4f5f3;
+}
+
+.help {
+    color: #a2a0a2;
+}
+
+/* main-board-css  */
+
+.project-heading {
+    color: #1E1F21;
+}
+
+.projectTopbar .star-icon:hover, .down-icon:hover, .status:hover, .projectNav-plus:hover {
+    background-color: #F5F3F3;
+}
+
+.projectnametop-right .border-color {
+    border: 0.5px solid #cfcbcb;
+}
+
+.projectnametop-right .border-right {
+    border-right: 0.5px solid #cfcbcb;
+}
+
+.projectNavigation-item:hover {
+    background-color: #F5F3F3;
+    border-bottom: 3px solid #AFABAC;
+}
+
+.projectNavigation-item:active {
+    border-bottom: 3px solid #6D6E6F;
+    
+}
+
+.projectNav-plus {
+    margin-left: -10px;
 }
