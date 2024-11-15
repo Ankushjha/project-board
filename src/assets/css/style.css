@@ -104,6 +104,10 @@ body {
     border-right: 0.5px solid #cfcbcb;
 }
 
+.projectNavigation-item {
+    border-bottom: 3px solid white;
+}
+
 .projectNavigation-item:hover {
     background-color: #F5F3F3;
     border-bottom: 3px solid #AFABAC;

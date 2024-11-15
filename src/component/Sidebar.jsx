@@ -1,6 +1,4 @@
 import React from 'react';
-import { useState } from 'react';
-import './style.css'
 import { BiHomeAlt2, BiCheckCircle, BiBell, BiGitCompare, BiCaretDown, BiPlus, BiFolder, BiUser } from "react-icons/bi";
 import { TbUsersGroup } from "react-icons/tb";
 import { CiMail } from "react-icons/ci";

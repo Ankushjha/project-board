@@ -10,20 +10,21 @@ import { WiStars } from "react-icons/wi";
 import { MdOutlineLeaderboard, MdTimeline, MdCalendarToday, MdAttachFile } from "react-icons/md";
 import { TfiLayoutListThumb } from "react-icons/tfi";
 import { LuClipboardList, LuWorkflow, LuMessageSquare } from "react-icons/lu";
-import './style.css';
 import ProjectNavigation from "./ProjectNavigation";
+import { Outlet } from 'react-router-dom';
+import Board from '../pages/Board';
 
 const ProjectPage = () => {
 
     const projectNavigation = [
+        { icon: <LuClipboardList />, label: 'Overview'},
         { icon: <TfiLayoutListThumb />, label: 'List' },
-        { icon: <MdOutlineLeaderboard />, label: 'Board' },
+        { icon: <MdOutlineLeaderboard />, label: 'Board', link: "./board"},
         { icon: <FaTimeline />, label: 'Timeline' },
         { icon: <MdTimeline />, label: 'Dashboard' },
         { icon: <MdCalendarToday />, label: 'Calendar' },
-        { icon: <LuClipboardList />, label: 'Overview' },
         { icon: <LuWorkflow />, label: 'Workflow' },
-        { icon: <LuMessageSquare />, label: 'Workflow' },
+        { icon: <LuMessageSquare />, label: 'Messages' },
         { icon: <MdAttachFile />, label: 'Files' },
     ]
 
@@ -42,7 +43,7 @@ const ProjectPage = () => {
                             <DiBrackets />
                         </IconContext.Provider>
 
-                        <div className='me-1 hover:border border-slate-700 rounded-md'>
+                        <div className='me-1 border border-white hover:border hover:border-slate-700 rounded-md'>
                             <span className='project-heading text-xl px-1 font-semibold'>Develop Curcuit Board - [Project Name]</span>
                         </div>
                         <div className='down-icon p-1 rounded-md me-1 text-xl'><VscChevronDown /></div>
@@ -91,13 +92,20 @@ const ProjectPage = () => {
                                     key={index}
                                     icon={item.icon}
                                     label={item.label}
+                                    link={item.link}
                                     hasNotification={item.hasNotification}
                                 />
                             ))}
-                            <button className='projectNav-plus px-1.5 text-xl hover:rounded-t-lg'>+</button>
+                            <button className='projectNav-plus px-1.5 text-xl pb-1.5 hover:rounded-t-lg'>+</button>
                         </div>
                     </a>
                 </div>
+            </div>
+
+            {/* Body part  */}
+
+            <div className="projectBody">
+               <Board />
             </div>
         </div>
     );

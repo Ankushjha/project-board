@@ -1,20 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import Navbar from './component/Navbar';
-import Sidebar from './component/Sidebar';
-import ProjectPage from './component/ProjectPage';
+import './assets/css/style.css'
+import { Route, Routes } from 'react-router-dom';
+import Home from './pages/Home.jsx';
+import ProjectPage from './component/ProjectPage.jsx';
+import Board from './pages/Board.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-       <Navbar></Navbar>
-       <div className='h-screen flex'>
-        <Sidebar></Sidebar>
-        <ProjectPage></ProjectPage>
-        </div>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/project/*' element={<ProjectPage />} >
+          <Route path='./board' element={<Board />} />
+        </Route>
+      </Routes>
     </>
   )
 }

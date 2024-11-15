@@ -2,7 +2,6 @@ import React from 'react';
 import { RxHamburgerMenu, RxPlus, RxChevronDown } from "react-icons/rx";
 import { IoIosSearch } from "react-icons/io";
 import { IconContext } from "react-icons";
-import './style.css'
 
 const Navbar = () => {
     return (
@@ -31,7 +30,7 @@ const Navbar = () => {
                             <IoIosSearch />
                         </div>
                     </IconContext.Provider>
-                    <input type="search" name="search" id="search" className='navbar-search rounded-full text-sm' placeholder='Search My workspace' />
+                    <input type="search" name="search" id="search" className='navbar-search focus:outline-none ps-8 rounded-full text-sm ' placeholder='Search My workspace' />
                 </div>
 
                 <div className="right-navbar flex">
