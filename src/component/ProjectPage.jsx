@@ -11,21 +11,21 @@ import { MdOutlineLeaderboard, MdTimeline, MdCalendarToday, MdAttachFile } from 
 import { TfiLayoutListThumb } from "react-icons/tfi";
 import { LuClipboardList, LuWorkflow, LuMessageSquare } from "react-icons/lu";
 import ProjectNavigation from "./ProjectNavigation";
-import { Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import Board from '../pages/Board';
 
 const ProjectPage = () => {
 
     const projectNavigation = [
-        { icon: <LuClipboardList />, label: 'Overview'},
-        { icon: <TfiLayoutListThumb />, label: 'List' },
-        { icon: <MdOutlineLeaderboard />, label: 'Board', link: "./board"},
-        { icon: <FaTimeline />, label: 'Timeline' },
-        { icon: <MdTimeline />, label: 'Dashboard' },
-        { icon: <MdCalendarToday />, label: 'Calendar' },
-        { icon: <LuWorkflow />, label: 'Workflow' },
-        { icon: <LuMessageSquare />, label: 'Messages' },
-        { icon: <MdAttachFile />, label: 'Files' },
+        { icon: <LuClipboardList />, label: 'Overview', link: "overview" },
+        { icon: <TfiLayoutListThumb />, label: 'List', link: "list" },
+        { icon: <MdOutlineLeaderboard />, label: 'Board', link: "board" },
+        { icon: <FaTimeline />, label: 'Timeline', link: "timeline" },
+        { icon: <MdTimeline />, label: 'Dashboard', link: "dashboard" },
+        { icon: <MdCalendarToday />, label: 'Calendar', link: "calender" },
+        { icon: <LuWorkflow />, label: 'Workflow', link: "workflow" },
+        { icon: <LuMessageSquare />, label: 'Messages', link: "messages" },
+        { icon: <MdAttachFile />, label: 'Files', link: "files" },
     ]
 
     return (
@@ -85,27 +85,37 @@ const ProjectPage = () => {
 
                 {/* Navigation part  */}
                 <div className="projectNavigation">
-                    <a href='#' className='flex items-center'>
+                    <div className='flex items-center'>
                         <div className="p-3 pb-0 flex">
                             {projectNavigation.map((item, index) => (
-                                <ProjectNavigation
+                                <NavLink
                                     key={index}
-                                    icon={item.icon}
-                                    label={item.label}
-                                    link={item.link}
-                                    hasNotification={item.hasNotification}
-                                />
+                                    to={item.link}
+                                    className={({ isActive }) => isActive ? "projectNavigation-item-active projectNavigation-item flex items-center me-4 py-1 px-1 hover:rounded-t-lg" : "projectNavigation-item flex items-center me-4 py-1 px-1 hover:rounded-t-lg"}>
+
+                                    <span className=' text-slate-500 text-sm'>{item.icon}</span>
+                                    <span className='ps-1 text-sm text-slate-500 font-medium'>
+                                        {item.label}
+                                    </span>
+                                    {/* <ProjectNavigation
+                                        key={index}
+                                        icon={item.icon}
+                                        label={item.label}
+                                        link={item.link}
+                                        hasNotification={item.hasNotification}
+                                    /> */}
+                                </NavLink>
                             ))}
                             <button className='projectNav-plus px-1.5 text-xl pb-1.5 hover:rounded-t-lg'>+</button>
                         </div>
-                    </a>
+                    </div>
                 </div>
             </div>
 
             {/* Body part  */}
 
             <div className="projectBody">
-               <Board />
+                <Outlet />
             </div>
         </div>
     );

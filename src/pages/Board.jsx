@@ -4,6 +4,7 @@ import { IoFilterSharp } from "react-icons/io5";
 import { BiSort } from "react-icons/bi";
 import { AiOutlineGroup } from "react-icons/ai";
 import { CgOptions } from "react-icons/cg";
+import BoardCardAddSection from '../component/BoardCardAddSection';
 
 const Board = () => {
     return (
@@ -38,7 +39,10 @@ const Board = () => {
 
             <section className='bg-[#F9F8F8] pt-5 px-10 text-sm min-h-screen'>
 
-                <BoardCard />
+                <div className="flex gap-5">
+                    <BoardCard />
+                    <BoardCardAddSection />
+                </div>
             </section>
         </>
     )

@@ -113,7 +113,7 @@ body {
     border-bottom: 3px solid #AFABAC;
 }
 
-.projectNavigation-item:active {
+.projectNavigation-item-active {
     border-bottom: 3px solid #6D6E6F;
     
 }
